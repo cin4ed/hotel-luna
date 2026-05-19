@@ -24,8 +24,7 @@ export const contact = {
 } as const;
 
 export const images = {
-  hero:
-    "https://hotellunaloreto.com/assets/img/gallery/img_69d957fa704a19.53263188.jpeg",
+  hero: "/images/hero.png",
   reserve:
     "https://hotellunaloreto.com/assets/img/hero/img_69ceb01ac2386.jpeg",
 } as const;
