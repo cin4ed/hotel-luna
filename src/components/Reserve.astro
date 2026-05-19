@@ -1,0 +1,33 @@
+---
+import { contact, images } from "../data/site";
+import Button from "./ui/Button.astro";
+---
+
+<section
+  class="reserve"
+  id="reservar"
+  style={`background: linear-gradient(180deg, rgba(13, 58, 92, 0.7), rgba(13, 58, 92, 0.85)), url('${images.reserve}') center/cover fixed;`}
+>
+  <div class="wrap reveal">
+    <span
+      class="eyebrow"
+      style="color: var(--atardecer-2); justify-content: center; display: flex;"
+      >Tu próxima escapada</span
+    >
+    <h2 style="margin-top: 24px;">
+      Ven a <em>desconectarte</em><br />en la Baja.
+    </h2>
+    <p>
+      Escríbenos directamente. Sin intermediarios, sin comisiones extra, con
+      respuesta personal del equipo del hotel.
+    </p>
+    <div class="reserve__channels">
+      <Button href={contact.whatsapp} variant="primary" arrow>
+        WhatsApp · Reservar
+      </Button>
+      <Button href={`mailto:${contact.email}`} variant="ghost">
+        Escribir por correo
+      </Button>
+    </div>
+  </div>
+</section>

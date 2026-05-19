@@ -1,0 +1,24 @@
+---
+import { galleryItems } from "../data/gallery";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Galería"
+      description="La casa, la alberca, las habitaciones, el malecón a 120 metros. Y los amaneceres, porque en Loreto los amaneceres se ganan su propio capítulo."
+    >
+      <Fragment slot="title">
+        Una <em>postal</em> del lugar.
+      </Fragment>
+    </SectionHead>
+    <div class="gallery__grid reveal">
+      {galleryItems.map((item) => (
+        <div class={`gallery__item ${item.className}`}>
+          <img src={item.src} alt={item.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+:root {
+  --arena: #f4ede1;
+  --arena-2: #ebe1d0;
+  --crema: #faf6ef;
+  --mar: #0d3a5c;
+  --mar-2: #1a5a82;
+  --agua: #4eb3c4;
+  --agua-claro: #a8dde4;
+  --atardecer: #c9633a;
+  --atardecer-2: #e0945a;
+  --luna: #6b4423;
+  --luna-claro: #a07a52;
+  --tinta: #1a1612;
+  --tinta-suave: #4a3e30;
+
+  --serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --r-xl: 28px;
+
+  --maxw: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+}

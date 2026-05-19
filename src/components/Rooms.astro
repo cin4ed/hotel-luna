@@ -1,0 +1,23 @@
+---
+import { rooms } from "../data/rooms";
+import RoomCard from "./RoomCard.astro";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="rooms" id="habitaciones">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Nuestras Habitaciones"
+      description="Tres habitaciones pensadas para parejas, amigos y familias. Cama king size, aire acondicionado, internet Starlink de alta velocidad y acceso directo a la alberca y áreas comunes del hotel."
+    >
+      <Fragment slot="title">
+        Descansa <em>frente al sur</em>.
+      </Fragment>
+    </SectionHead>
+    <div class="rooms__grid">
+      {rooms.map((room) => (
+        <RoomCard room={room} />
+      ))}
+    </div>
+  </div>
+</section>

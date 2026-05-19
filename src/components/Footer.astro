@@ -1,0 +1,58 @@
+---
+import { contact, navLinks } from "../data/site";
+---
+
+<footer id="contacto">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <h3>Hotel Luna · Loreto</h3>
+      <p>
+        Una pequeña casa boutique en el corazón de Loreto, Baja California Sur. A
+        120 metros del malecón y a 5 minutos del muelle del puerto. Operamos
+        también los tours de pesca, snorkel y observación de ballenas.
+      </p>
+    </div>
+    <div class="footer__col">
+      <h5>Navegar</h5>
+      <ul>
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Idioma</h5>
+      <ul>
+        <li><a href="#">Español</a></li>
+        <li><a href="#">English</a></li>
+      </ul>
+      <h5 style="margin-top: 28px;">Síguenos</h5>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Loretanos</a></li>
+      </ul>
+    </div>
+    <div class="footer__contact">
+      <h5
+        style="font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--atardecer-2); margin-bottom: 24px; font-weight: 500;"
+        >Contacto</h5
+      >
+      <p><strong>{contact.phone}</strong></p>
+      <p>{contact.email}</p>
+      <p style="margin-top: 16px;">
+        {contact.addressLines.map((line, i) => (
+          <>
+            {line}
+            {i < contact.addressLines.length - 1 && <br />}
+          </>
+        ))}
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Hotel Luna Loreto · Todos los derechos reservados</span>
+    <span>Diseño: muestra de propuesta</span>
+  </div>
+</footer>

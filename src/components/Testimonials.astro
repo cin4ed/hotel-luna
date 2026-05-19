@@ -1,0 +1,23 @@
+---
+import { testimonials } from "../data/testimonials";
+import Testimonial from "./Testimonial.astro";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="testimonials">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Huéspedes"
+      description="Pequeño es bonito. La mayoría de quienes nos visitan vuelven, y muchos llegan recomendados por amigos que ya estuvieron aquí."
+    >
+      <Fragment slot="title">
+        Lo que nos <em>cuentan</em><br />al despedirse.
+      </Fragment>
+    </SectionHead>
+    <div class="testimonials__grid reveal">
+      {testimonials.map((t) => (
+        <Testimonial testimonial={t} />
+      ))}
+    </div>
+  </div>
+</section>

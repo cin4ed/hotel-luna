@@ -1,0 +1,50 @@
+---
+import { images } from "../data/site";
+import Button from "./ui/Button.astro";
+---
+
+<header
+  class="hero"
+  style={`background: linear-gradient(180deg, rgba(13, 58, 92, 0.45) 0%, rgba(13, 58, 92, 0.15) 40%, rgba(13, 58, 92, 0.7) 100%), url('${images.hero}') center/cover;`}
+>
+  <div class="hero__location">
+    <span class="eyebrow">26° 0' N · 111° 20' W</span>
+    <h4>Loreto, Baja California Sur</h4>
+  </div>
+
+  <div class="hero__grid">
+    <div>
+      <span class="eyebrow" style="color: var(--agua-claro);"
+        >Hotel boutique · Mar de Cortés</span
+      >
+      <h1 class="hero__title" style="margin-top: 24px;">
+        Donde la <em>luna</em><br />se asoma al mar.
+      </h1>
+      <div class="hero__cta-row">
+        <Button href="#habitaciones" variant="primary" arrow>
+          Ver habitaciones
+        </Button>
+        <Button href="#experiencias" variant="ghost">Explorar Loreto</Button>
+      </div>
+    </div>
+    <div class="hero__meta">
+      <p class="hero__sub">
+        A pocos pasos del malecón y la dársena del puerto. Una casa con alberca,
+        palmeras, y vista a un mar que Cousteau llamó <em>"el acuario del mundo"</em
+        >.
+      </p>
+      <div class="hero__meta-item">
+        <span>03</span>
+        <span>Habitaciones · Capacidad familiar</span>
+      </div>
+      <div class="hero__meta-item">
+        <span>120m</span>
+        <span>al Malecón de Loreto</span>
+      </div>
+      <div class="hero__meta-item">
+        <span>★★★★★</span>
+        <span>Reseñas verificadas</span>
+      </div>
+    </div>
+  </div>
+</header>

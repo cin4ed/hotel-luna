@@ -1,0 +1,23 @@
+---
+import { tours } from "../data/tours";
+import ExperienceCard from "./ExperienceCard.astro";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="experience" id="experiencias">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Experiencias en el mar"
+      description="Tours operados directamente por el hotel, con embarcaciones propias y guías locales con más de 28 años en el Mar de Cortés. Reserva tu habitación y tu salida al mar en la misma conversación."
+    >
+      <Fragment slot="title">
+        El mar es <em>lo que hace</em><br />a Loreto, Loreto.
+      </Fragment>
+    </SectionHead>
+    <div class="exp__grid">
+      {tours.map((tour) => (
+        <ExperienceCard tour={tour} />
+      ))}
+    </div>
+  </div>
+</section>

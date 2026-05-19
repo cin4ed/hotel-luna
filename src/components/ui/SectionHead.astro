@@ -1,0 +1,26 @@
+---
+interface Props {
+  eyebrow: string;
+  description?: string;
+  centered?: boolean;
+  class?: string;
+}
+
+const { eyebrow, description, centered = false, class: className } = Astro.props;
+---
+
+<div
+  class:list={["section-head", "reveal", className]}
+  style={centered
+    ? "grid-template-columns: 1fr; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;"
+    : undefined}
+>
+  <div>
+    <span
+      class="eyebrow"
+      style={centered ? "justify-content: center;" : undefined}>{eyebrow}</span
+    >
+    <h2 style="margin-top: 18px;"><slot name="title" /><slot /></h2>
+  </div>
+  {description && <p>{description}</p>}
+</div>

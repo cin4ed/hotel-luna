@@ -1,0 +1,41 @@
+---
+import type { Room } from "../data/rooms";
+
+interface Props {
+  room: Room;
+}
+
+const { room } = Astro.props;
+const variantClass =
+  room.variant === "feature"
+    ? "room-card--feature"
+    : room.variant === "side"
+      ? "room-card--side"
+      : "room-card--full";
+---
+
+<article class={`room-card ${variantClass} reveal`}>
+  <div class="room-card__media">
+    {room.tag && <span class="room-card__tag">{room.tag}</span>}
+    <img src={room.image} alt={room.imageAlt} loading="lazy" />
+  </div>
+  <div class="room-card__body">
+    <h3 class="room-card__title">{room.title}</h3>
+    <p class="room-card__desc">{room.description}</p>
+    <ul class="room-card__features">
+      {room.features.map((feature) => (
+        <li>{feature}</li>
+      ))}
+    </ul>
+    <div class="room-card__foot">
+      <div class="room-card__price">
+        <small>Desde</small>
+        <span class="room-card__price-num">
+          ${room.price.toLocaleString("es-MX")}{" "}
+          <small>MXN / noche</small>
+        </span>
+      </div>
+      <a href="#reservar" class="room-card__book">Reservar →</a>
+    </div>
+  </div>
+</article>

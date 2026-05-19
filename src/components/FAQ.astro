@@ -1,0 +1,27 @@
+---
+import { faqItems } from "../data/faq";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="faq">
+  <div class="wrap">
+    <SectionHead eyebrow="Preguntas frecuentes" centered>
+      <Fragment slot="title">
+        Antes de <em>reservar</em>.
+      </Fragment>
+    </SectionHead>
+    <div class="faq__inner reveal">
+      {faqItems.map((item) => (
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            {item.question}
+            <span class="faq-q__icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

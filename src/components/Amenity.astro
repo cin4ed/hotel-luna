@@ -1,0 +1,44 @@
+---
+import type { Amenity } from "../data/amenities";
+
+interface Props {
+  amenity: Amenity;
+}
+
+const { amenity } = Astro.props;
+---
+
+<div class="amenity">
+  <svg class="amenity__icon" viewBox="0 0 48 48">
+    {
+      amenity.icon === "kitchen" && (
+        <path d="M8 36h32M12 36V20l12-8 12 8v16M18 36V26h12v10M22 30h4" />
+      )
+    }
+    {
+      amenity.icon === "pool" && (
+        <>
+          <path d="M6 32c4-2 8-2 12 0s8 2 12 0 8-2 12 0M6 38c4-2 8-2 12 0s8 2 12 0 8-2 12 0M14 26V14a4 4 0 014-4h12a4 4 0 014 4v12" />
+          <circle cx="20" cy="18" r="2" />
+          <circle cx="28" cy="18" r="2" />
+        </>
+      )
+    }
+    {
+      amenity.icon === "restaurant" && (
+        <path d="M16 8v8M24 8v8M32 8v8M10 16h28v6c0 6-6 10-14 10s-14-4-14-10v-6zM6 16h4M38 16h4M14 36h20M16 40h16" />
+      )
+    }
+    {
+      amenity.icon === "wifi" && (
+        <>
+          <circle cx="24" cy="24" r="16" />
+          <path d="M24 8v32M8 24h32M14 14l20 20M34 14L14 34" />
+        </>
+      )
+    }
+  </svg>
+  <h4 class="amenity__title">{amenity.title}</h4>
+  <p class="amenity__desc">{amenity.description}</p>
+  <span class="amenity__meta">{amenity.meta}</span>
+</div>

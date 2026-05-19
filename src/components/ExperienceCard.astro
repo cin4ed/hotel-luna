@@ -1,0 +1,22 @@
+---
+import type { Tour } from "../data/tours";
+
+interface Props {
+  tour: Tour;
+}
+
+const { tour } = Astro.props;
+---
+
+<article class="exp-card reveal">
+  <div
+    class="exp-card__bg"
+    style={`background-image:url('${tour.image}')`}
+  ></div>
+  <div class="exp-card__body">
+    <span class="exp-card__num">{tour.num}</span>
+    <h3 class="exp-card__title">{tour.title}</h3>
+    <p class="exp-card__desc">{tour.description}</p>
+    <span class="exp-card__link">Reservar salida →</span>
+  </div>
+</article>

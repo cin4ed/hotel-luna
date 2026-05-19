@@ -1,0 +1,23 @@
+---
+import { posts } from "../data/posts";
+import PostCard from "./PostCard.astro";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="journal" id="diario">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Diario · Bitácora"
+      description="Pequeñas notas sobre Loreto, sus islas, sus temporadas y lo que pasa cuando se viaja sin prisa por la Baja."
+    >
+      <Fragment slot="title">
+        Historias <em>de la bahía</em>.
+      </Fragment>
+    </SectionHead>
+    <div class="journal__grid reveal">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </div>
+</section>

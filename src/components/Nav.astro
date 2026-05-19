@@ -1,0 +1,60 @@
+---
+import { navLinks } from "../data/site";
+---
+
+<nav class="nav" id="nav">
+  <a href="#" class="nav__brand">
+    <span class="nav__brand-mark"></span>
+    <span class="nav__brand-text">
+      Luna
+      <small>HOTEL · LORETO</small>
+    </span>
+  </a>
+  <div class="nav__links">
+    {
+      navLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))
+    }
+    <a href="#reservar" class="nav__cta">Reservar</a>
+  </div>
+  <button
+    class="nav__menu-btn"
+    id="nav-menu-btn"
+    type="button"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+    aria-controls="nav-drawer"
+  >
+    ☰
+  </button>
+</nav>
+
+<div
+  class="nav__drawer-overlay"
+  id="nav-drawer-overlay"
+  aria-hidden="true"
+>
+</div>
+
+<aside
+  class="nav__drawer"
+  id="nav-drawer"
+  aria-hidden="true"
+  aria-label="Menú de navegación"
+>
+  <button
+    class="nav__drawer-close"
+    id="nav-drawer-close"
+    type="button"
+    aria-label="Cerrar menú"
+  >
+    ×
+  </button>
+  {
+    navLinks.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))
+  }
+  <a href="#reservar" class="nav__cta">Reservar</a>
+</aside>

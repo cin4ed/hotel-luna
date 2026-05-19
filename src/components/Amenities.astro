@@ -1,0 +1,23 @@
+---
+import { amenities } from "../data/amenities";
+import Amenity from "./Amenity.astro";
+import SectionHead from "./ui/SectionHead.astro";
+---
+
+<section class="amenities" id="servicios">
+  <div class="wrap">
+    <SectionHead
+      eyebrow="Servicios e instalaciones"
+      description="El hotel está pensado como una casa amplia: cocina al aire libre, alberca elevada con ducha, y un restaurante propio para cerrar la noche sin tener que salir."
+    >
+      <Fragment slot="title">
+        Todo lo que <em>necesitas</em>,<br />nada de lo que sobra.
+      </Fragment>
+    </SectionHead>
+    <div class="amenities__grid reveal">
+      {amenities.map((amenity) => (
+        <Amenity amenity={amenity} />
+      ))}
+    </div>
+  </div>
+</section>
