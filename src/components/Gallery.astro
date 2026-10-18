@@ -15,8 +15,14 @@ import SectionHead from "./ui/SectionHead.astro";
     </SectionHead>
     <div class="gallery__grid reveal">
       {galleryItems.map((item) => (
-        <div class={`gallery__item ${item.className}`}>
-          <img src={item.src} alt={item.alt} loading="lazy" />
+        <div class="gallery__item" style={`--ar: ${item.width / item.height}`}>
+          <img
+            src={item.src}
+            alt={item.alt}
+            width={item.width}
+            height={item.height}
+            loading="lazy"
+          />
         </div>
       ))}
     </div>
